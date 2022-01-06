@@ -1,4 +1,4 @@
-# cultura_argentina
+# Cultura Argentina
 Descripción: Challenge de la aceleradora en análisis de datos
 
 ## Objetivo
@@ -14,6 +14,10 @@ en torno a cuatro ejes centrales:
  - d) la actualización de la base de datos.
 
 
-Archivos - jupyter notebooks:
-- El primero, 01..  descarga las tablas de datos de las páginas webs dadas 
-- El segundo, 02... hace el procesamiento de los datos y guarda 3 tablas de datos diferentes, q son las que se van a usar para popular una base de datos SQL.
+# Archivos:
+- En el archivo "Challenge Data Analytics con Python.pdf" pueden encontrar todos los detalles del proyecto.
+- 01_tablas.ipynb: descarga las tablas de datos de las páginas webs dadas
+- 02_Procesamiento.ipynb: hace el procesamiento de los datos y guarda 3 tablas de datos diferentes,
+                         q son las que se van a usar para popular una base de datos SQL.
+                         
+
