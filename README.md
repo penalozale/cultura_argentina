@@ -1,6 +1,20 @@
 # Challenge Data Analytics - Python
+## Objetivo
+Este proyecto consiste en crear una base de datos SQL con información cultural sobre bibliotecas, museos y salas de cines argentinos. Dicha información se obtiene de la página oficial del gobierno y hay que procesarla para luego poblar la base de datos. A continuación enunciaremos los pasos a seguir.
 
-Este proyecto consiste en crear una base de datos SQL con información cultural sobre bibliotecas, museos y salas de cines argentinos. Dicha información se obtiene de la página oficial del gobierno y hay que procesarla para luego poblar la base de datos. Los pasos generales a realizar se explican en el documento: Challenge Data Analytics con Python.pdf
+## Requisitos
+Tener instalado los siguientes programas:
+ - python3
+ - PostgreSQL
+
+## Pasos a seguir
+En resumen, el código va a obtener el link de la tabla de datos y las va a descargar. Luego, va a procesar estos datos y crear tres archivos. Estos van a contener los datos que van a poblar la base de datos que crearemos por medio de PostgreSQL. 
+
+Recomendamos usar un [entorno virtuales](https://docs.python.org/es/3/tutorial/venv.html) de Python3. La forma más fácil de instalar todas las dependencias requeridas es la siguiente:
+
+<h1 align="center">  ```$ pip install -r requirements.txt```  </h1>
+
+
 
 
 
@@ -9,11 +23,10 @@ Este proyecto consiste en crear una base de datos SQL con información cultural 
 Los datos a utilizar se encuentran dentro de https://datos.gob.ar. 
  - museos = 'https://datos.gob.ar/dataset/cultura-mapa-cultural-espacios-culturales/archivo/cultura_4207def0-2ff7-41d5-9095-d42ae8207a5d'
  - cines = 'https://datos.gob.ar/dataset/cultura-mapa-cultural-espacios-culturales/archivo/cultura_392ce1a8-ef11-4776-b280-6f1c7fae16ae'
- - bibliotecas = 'https://datos.gob.ar/dataset/cultura-mapa-cultural-espacios-culturales/archivo/cultura_01c6c048-dbeb-44e0-8efa-6944f73715d7'
+ - bibliotecas populares = 'https://datos.gob.ar/dataset/cultura-mapa-cultural-espacios-culturales/archivo/cultura_01c6c048-dbeb-44e0-8efa-6944f73715d7'
 
-## Objetivo
-Crear un proyecto que consuma datos desde tres fuentes distintas para popular una base de datos SQL
-con información cultural sobre bibliotecas, museos y salas de cines argentinos.
+## Idea
+
 
 ## Requerimientos funcionales
 El proyecto deberá cumplir con una serie de requerimientos funcionales que giran
@@ -25,9 +38,9 @@ en torno a cuatro ejes centrales:
 
 
 ## Archivos:
-- En el archivo "Challenge Data Analytics con Python.pdf" pueden encontrar todos los detalles del proyecto.
-- 01_tablas.ipynb: descarga las tablas de datos de las páginas webs dadas
-- 02_Procesamiento.ipynb: hace el procesamiento de los datos y guarda 3 tablas de datos diferentes,
+- En el archivo [Challenge Data Analytics con Python.pdf](Challenge%20Data%20Analytics%20con%20Python.pdf) pueden encontrar todos los detalles del proyecto.
+- [01_tablas.ipynb](01_tablas.ipynb): descarga las tablas de datos de las páginas webs dadas
+- [02_Procesamiento.ipynb](02_Procesamiento.ipynb): hace el procesamiento de los datos y guarda 3 tablas de datos diferentes,
                          q son las que se van a usar para popular una base de datos SQL.
 
 
@@ -47,7 +60,7 @@ ___Se recomienda que la carpeta para el entorno virtual sea una subcarpeta de Py
              python3 : **python3 -m venv env**
       Windows: **python -m venv env**
      
-     , esto creará un carpeta "env" con tres subcarpetas más: bin ("Scripts" en windows), include y lib.
+     , esto creará un carpeta "env" con: el archivo pyenv.cfg y tres subcarpetas: bin ("Scripts" en windows), include y lib.
   
   3) Activamos el entorno:
       Linux: **source env/bin/activate**
