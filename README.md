@@ -21,3 +21,25 @@ en torno a cuatro ejes centrales:
                          q son las que se van a usar para popular una base de datos SQL.
 
 
+                         
+
+
+
+# Usar entornos virtuales de python
+Para usar entornos virtuales de Python (venv o virtualenv) instalados con el gestor de paquetes PIP en el entorno de ejecución de código Jupyter debemos de usar los pasos que se indican a continuación. De esta forma tendremos las librerías cargadas independientemente entre los distintos Kernels de ejecución del sistema.
+
+### Acceso al sistema
+Primero debemos de crear el entorno virtual en nuestro sistema, en donde tengamos Jupyter instalado.
+
+### Acceso desde la terminal de Jupyter
+Podemos acceder al Sistema Operativo accediendo desde la terminal de la interfaz Web, ya que esta muestra el Prompt del propio sistema en donde se encuentra corriendo Jupyter.  (New/Terminal)
+
+### Crear directorio para el entorno
+Es buena práctica crear un directorio para los Notebooks que usaremos en este entorno virtual. Por ejemplo, vamos a crear un entorno para Redis, por lo que creamos el directorio:
+
+
+
+
+
+
+
