@@ -26,23 +26,45 @@ en torno a cuatro ejes centrales:
 
 
 # Intrucciones para usar entornos virtuales de python
-Para usar entornos virtuales de Python (venv o virtualenv) instalados con el gestor de paquetes PIP en el entorno de ejecución de código Jupyter debemos de usar los pasos que se indican a continuación. De esta forma tendremos las librerías cargadas independientemente entre los distintos Kernels de ejecución del sistema.
+Utilizaremos entornos virtuales ya que, de esta forma, tendremos las librerías cargadas independientemente entre los distintos Kernels de ejecución del sistema.
+___Se recomienda que la carpeta para el entorno virtual sea una subcarpeta de Python al que está asociado.  ¿ ?
 
- - Acceso al sistema
-Primero debemos de crear el entorno virtual en nuestro sistema, en donde tengamos Jupyter instalado.
+  1) Desde la terminal del sistema, vamos a crear un directorio para el entorno y vamos a ubicarnos en este:
+      **mkdir python-virtual-env && cd python-virtual-env**
+      
+  2) Creamos el entorno:
+      Linux: python2 : **virtual-env env**
+             python3 : **python3 -m venv env**
+      Windows: **python -m venv env**
+     
+     , esto creará un carpeta "env" con tres subcarpetas más: bin ("Scripts" en windows), include y lib.
+  
+  3) Activamos el entorno:
+      Linux: **source env/bin/activate**
+      Windows: **bin\activate**        --------------------->  C O R R E G I R   !!!!!!!
+     
+     , veremos que aparecerá el nombre del entorno delante del prompt.
 
- - Acceso desde la terminal de Jupyter
-Podemos acceder al Sistema Operativo accediendo desde la terminal de la interfaz Web, ya que esta muestra el Prompt del propio sistema en donde se encuentra corriendo Jupyter.  (New/Terminal)
-
- - Crear directorio para el entorno
-Es buena práctica crear un directorio para los Notebooks que usaremos en este entorno virtual. Por ejemplo, vamos a crear un entorno para el Challenge, por lo que creamos el directorio y nos situamos en el mismo:
-        **mkdir Alkemy**
-        **cd Alkemy**
+Una vez que tenemos el entorno virtual activado, debemos instalar todas las librerías que vamos a utilizar dentro del mismo. Tener en cuenta que para que los siguientes comandos funcionen en windows, se asume que python está incluido en las variables del sistema.
  
- - Crear y configurar el entorno virtual con python 3:
+ - instalar nuevo paquete:    **pip install nombre_paquete**  (instalará todas las dependencias también)
+ - eliminar paquete:    **pip uninstall nombre:paquete**  (NO desintalará las dependencias)
+ - listar paquetes instalados: **pip list** 
+     ó podemos usar: **pip freeze > requirements.txt** , y obtenemos de esta manera la lista de paquetes instalados en un archivo llamado: "requirements".
+
+
+ 
+
+
+   
+
+
+
+
+  - Luego, creamos y configurar el entorno virtual con python 3:
 Si no tenemos el paquete necesario para hacerlo, debemos instalarlo, para que corra con python 3, usamos pip3:
     **pip3 install virtualenv**
-Creamos el entorno virtual, por ej: Challenge202, indicando la versión de Python que queremos que corra en este entorno. (Usamos un punto al inicio del nombre del entorno para que este sea oculto y no se muestre en el listado de archivos y Notebooks del directorio en Jupyter):
+Creamos el entorno virtual, por ej: Challenge2022, indicando la versión de Python que queremos que corra en este entorno. (Usamos un punto al inicio del nombre del entorno para que este sea oculto y no se muestre en el listado de archivos y Notebooks del directorio en Jupyter):
    **python3 -m venv Challenge2022**  ¿ y/o ?
    
    **virtualenv env**  --> Este creará un directorio "env" que contiene a los directorios: bin ("Scripts" en Windows) , include y lib
