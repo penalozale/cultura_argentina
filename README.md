@@ -31,7 +31,7 @@ El código va a obtener el link de la tabla de datos y las va a descargar. Luego
 Recomendamos usar un [entorno virtuales](https://docs.python.org/es/3/tutorial/venv.html) de Python3.
 
 Primero abrimos una terminal, nos ubicamos en el directorio donde queramos guardar el repositorio y seguimos los siguientes pasos:
- - git clone https://github.com/penalozale/cultura_argentina.git   # me descarga el repositorio en una carpeta llamada "cultura_argentina"
+ - git clone https://github.com/penalozale/cultura_argentina.git
  - cd cultura_argentina
  - python3 -m venv .venv
  - source .venv/bin/activate (en Windows: .venv\Scripts\activate)
