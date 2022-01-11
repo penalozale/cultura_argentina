@@ -29,6 +29,7 @@ Tener instalado los siguientes programas:
 El código va a obtener el link de la tabla de datos y las va a descargar. Luego, va a procesar estos datos y crear tres archivos. Estos van a contener los datos que van a poblar la base de datos que crearemos por medio de PostgreSQL. 
 
 Recomendamos usar un [entorno virtuales](https://docs.python.org/es/3/tutorial/venv.html) de Python3.
+
 Primero abrimos una terminal, nos ubicamos en el directorio donde queramos guardar el repositorio y seguimos los siguientes pasos:
  - git clone https://github.com/penalozale/cultura_argentina.git   # me descarga el repositorio en una carpeta llamada "cultura_argentina"
  - cd cultura_argentina
