@@ -10,12 +10,15 @@ Tener instalado los siguientes programas:
 ## Pasos a seguir
 En resumen, el código va a obtener el link de la tabla de datos y las va a descargar. Luego, va a procesar estos datos y crear tres archivos. Estos van a contener los datos que van a poblar la base de datos que crearemos por medio de PostgreSQL. 
 
-Recomendamos usar un [entorno virtuales](https://docs.python.org/es/3/tutorial/venv.html) de Python3. La forma más fácil de instalar todas las dependencias requeridas es la siguiente:
+Recomendamos usar un [entorno virtuales](https://docs.python.org/es/3/tutorial/venv.html) de Python3.
+Primero abrimos una terminal y seguimos los siguientes pasos:
+ - git clone https://github.com/penalozale/cultura_argentina.git   # me descarga el repositorio en una carpeta llamada "cultura_argentina"
+ - cd cultura_argentina
+ - python3 -m venv .venv
+ - source .venv/bin/activate
+ - pip install -r requirements.txt
 
-<h1 align="center">  ```$ pip install -r requirements.txt```  </h1>
-
-
-
+Con esto, clonamos el repositorio, creamos un entorno virtual (.venv), lo activamos e instalamos las dependencias que necesita el proyecto. 
 
 
 
