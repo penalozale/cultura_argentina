@@ -132,7 +132,7 @@ def guardar_archivo_bin(file_path, tabla):
     csv_file.close()
     
     logging.info(f'Se guardó la tabla en: {file_path}')
-    return print(f'Se guardó la tabla en: {file_path}')
+    return
 
 ### ----------------------------------------------------------------
 def buscar_archivos(carpeta_ppal = 'Cultura_dataset'):
@@ -176,8 +176,8 @@ def leer_archivos_DF(file):
     encode = result['encoding']    
     
     df = pd.read_csv(file, encoding = encode, dtype=str)  
-
-    logging.info(f'Archivo leído y listo para procesar.')
+    
+    logging.info(f'Archivo leído: {file}')
     
     return df
 
