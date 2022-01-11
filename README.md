@@ -21,7 +21,7 @@ Los datos a utilizar se encuentran dentro de https://datos.gob.ar.
 Tener instalado los siguientes programas:
  - git
  - python3
- - PostgreSQL
+ - PostgreSQL (además: libpq-dev)
 
 **NOTA**: Los comandos utilizados acá son para usar en sistemas operativos LINUX. Para usuarios de Windows, se aclararán los comandos que difieren a los de linux al lado del otro y entre paréntesis.
 
