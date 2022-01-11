@@ -2,7 +2,8 @@
 
 ## Objetivo
 Este proyecto consiste en crear una base de datos SQL con información cultural sobre bibliotecas, museos y salas de cines argentinos. Dicha información se obtiene de la página oficial del gobierno y hay que procesarla para luego poblar la base de datos. 
-A continuación enunciaremos los pasos a seguir a gran escala:
+
+A gran escala, los pasos a seguir son:
  1) Descargar los archivos fuentes.
  2) Procesar los datos y crear tres nuevas tablas.
  3) Crear una Base de datos y las tablas.
