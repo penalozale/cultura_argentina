@@ -23,7 +23,7 @@ Tener instalado los siguientes programas:
  - python3
  - PostgreSQL
 
-**NOTA**: Los comandos utilizados acá son para usar en sistemas operativos LINUX. Para Windows, se aclararán los comandos que difieren a los de linux.
+**NOTA**: Los comandos utilizados acá son para usar en sistemas operativos LINUX. Para usuarios de Windows, se aclararán los comandos que difieren a los de linux al lado del otro y entre paréntesis.
 
 ## Pasos a seguir
 El código va a obtener el link de la tabla de datos y las va a descargar. Luego, va a procesar estos datos y crear tres archivos. Estos van a contener los datos que van a poblar la base de datos que crearemos por medio de PostgreSQL. 
