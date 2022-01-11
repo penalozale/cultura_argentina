@@ -21,6 +21,7 @@ Tener instalado los siguientes programas:
  - git
  - python3
  - PostgreSQL
+
 **NOTA**: Los comandos utilizados acá son para usar en sistemas operativos LINUX. Para Windows, se aclararán los comandos que difieren a los de linux.
 
 ## Pasos a seguir
