@@ -22,7 +22,6 @@ Tener instalado los siguientes programas:
  - git
  - python3
  - PostgreSQL (además: libpq-dev)
-    - Durante su instalación, en Windows pide una contraseña, pero en Linux no. En linux hay que escribirla a mano: "sudo passwd postgres"
 
 **NOTA**: Los comandos utilizados acá son para usar en sistemas operativos LINUX. Para usuarios de Windows, se aclararán los comandos que difieren a los de linux al lado del otro y entre paréntesis.
 
