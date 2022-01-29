@@ -1,6 +1,6 @@
 
 def database():
-        
+    import chardet
     import os
     import pandas as pd
     from sqlalchemy import create_engine
@@ -36,14 +36,11 @@ def database():
     
     
     ### --- A) Tabla única ---
-    tabla = pd.read_csv(path_tabla_f, dtype='string')
-    
+    tabla = pd.read_csv(path_tabla_f, dtype='string', encoding = 'utf-8')    
     # Agregamos la fecha de hoy, como fecha de carga
     tabla['fecha_carga'] = pd.to_datetime('today').strftime("%d-%m-%Y")
-    
     # Pasamos los nombres de las columnas a minúsculas
     tabla.columns = [utils.str_minuscula(ch) for ch in list(tabla.columns)]
-    
     
     ### --- Armamos las tablas que van a poblar la base de datos (BD) ---
     # Obtenemos los datos para la tabla de la BD: 'provincias'
@@ -66,7 +63,7 @@ def database():
     
     
     ### --- B) Tabla: Cines INCAA ---
-    cines_info = pd.read_csv(path_incaa_f)
+    cines_info = pd.read_csv(path_incaa_f, encoding = 'utf-8')
     cines_info.columns = [utils.str_minuscula(ch) for ch in list(cines_info.columns)]
     cines_info.columns
     
@@ -80,15 +77,15 @@ def database():
     # - Cada sub-tabla comienza con una linea comentada
     
     # 1ra sub-tabla: registros por categoria
-    reg_categ = pd.read_csv(path_conjunto_f, skiprows=1, nrows=3, names = ['categoria', 'cantidad'])
+    reg_categ = pd.read_csv(path_conjunto_f, skiprows=1, nrows=3, names = ['categoria', 'cantidad'], encoding = 'utf-8')
     
     # 2da sub-tabla: registros por provincia y categoria
-    reg_prov_cat = pd.read_csv(path_conjunto_f, skiprows=6, nrows=24*3, names=['provincia', 'categoria', 'cantidad'])
+    reg_prov_cat = pd.read_csv(path_conjunto_f, skiprows=6, nrows=24*3, names=['provincia', 'categoria', 'cantidad'], encoding = 'utf-8') 
     #  Agregamos fecha de carga
     reg_prov_cat['fecha_carga'] = pd.to_datetime('today').strftime("%d-%m-%Y")
     
     # 3ra sub-tabla: registros por fuente (hay que normalizar los nombres)
-    reg_fuente = pd.read_csv(path_conjunto_f, skiprows=8+24*3, names=['fuente', 'cantidad'])
+    reg_fuente = pd.read_csv(path_conjunto_f, skiprows=8+24*3, names=['fuente', 'cantidad'], encoding = 'utf-8')
     #  Agregamos fecha de carga
     reg_fuente['fecha_carga'] = pd.to_datetime('today').strftime("%d-%m-%Y")
     

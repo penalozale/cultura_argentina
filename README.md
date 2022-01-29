@@ -3,8 +3,6 @@
 ## Objetivo
 Este proyecto consiste en crear una base de datos SQL con información cultural sobre bibliotecas, museos y salas de cines argentinos. Dicha información se obtiene de la página oficial del gobierno y hay que procesarla para luego poblar la base de datos. 
 
-**NOTA**: Lamentablemente no está terminado el challenge completamente. Además de algunas cosas por corregir (en eso sigo)
-
 ## Datos y fuentes
 Los datos a utilizar son públicos y se encuentran dentro de https://datos.gob.ar.
  - museos = 'https://datos.gob.ar/dataset/cultura-mapa-cultural-espacios-culturales/archivo/cultura_4207def0-2ff7-41d5-9095-d42ae8207a5d'

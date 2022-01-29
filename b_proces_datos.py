@@ -113,7 +113,7 @@ def proces_datos():
 
     # Guardamos la tabla
     path_incaa = os.path.normpath(os.path.join(cines, "..", "..", "..")) + '/cines_INCAA.csv'
-    tabla_INCAA.to_csv(path_incaa, sep=',')
+    tabla_INCAA.to_csv(path_incaa, sep=',', encoding='utf8')
 
     print(f'se guardó la tabla de espacios INCAA en {path_incaa}')
     logging.info(f'se guardó la tabla de espacios INCAA en {path_incaa}')
@@ -129,18 +129,17 @@ def proces_datos():
     tabla_final = pd.concat(tablas, ignore_index=True)
     
     # Trabajaremos con una copia de la tabla original
-    tabla = tabla_final.copy(deep=True)
+    tabla = tabla_final.copy(deep=True) 
+    
     # utilizo lafuncion en el archivo "tareas_correccion.py"
     tc.correcciones(tabla)
     
     # Eliminamos la columna 'Fuente'
     tabla_unica = tabla.drop(columns = 'Fuente')
     
-#     print(tabla[['Id_provincia', 'Provincia']].drop_duplicates().reset_index())
-    
     # Guardamos la 'tabla única'  como un archivo .csv
     path_tabla = os.path.normpath(os.path.join(cines, "..", "..", "..")) + '/tabla_unica.csv'
-    tabla_unica.to_csv(path_tabla, sep=',')
+    tabla_unica.to_csv(path_tabla, sep=',', encoding='utf8')
 
     print(f'Se guardó la tabla que combina las 3 categorías en {path_tabla}')
     logging.info(f'se guardó la tabla que combina las 3 categorías en {path_tabla}')
@@ -158,13 +157,13 @@ def proces_datos():
     path_final = os.path.normpath(os.path.join(cines, "..", "..", "..")) + '/datos_conjuntos.csv'
     with open(path_final, 'w') as f:
         f.write('# Registros totales por categoría:\n')
-        reg_por_categoria.to_csv(f, header = False, mode = 'a')
+        reg_por_categoria.to_csv(f, header = False, mode = 'a', encoding='utf8')
         f.write('\n')
         f.write('# Registros por provincia y por categoría:\n')
-        reg_prov_categ.to_csv(f, header = False, mode = 'a')
+        reg_prov_categ.to_csv(f, header = False, mode = 'a', encoding='utf8')
         f.write('\n')
         f.write('# Registros totales por fuente:\n')
-        reg_por_fuente.to_csv(f, header = False, mode = 'a')
+        reg_por_fuente.to_csv(f, header = False, mode = 'a', encoding='utf8')
         
         
     print(f'se guardaron 3 tablas en un mismo archivo, en  {path_final}')
@@ -173,4 +172,22 @@ def proces_datos():
     logging.info('...... Terminó el Procesado de Datos (2da parte)')
     print(' \n...... Terminó el Procesado de Datos (2da parte)')
 
+    ## ----------------------------------------------------------------
+    file1 = path_incaa   #   path_tabla,  path_final
+    with open(file1, 'rb') as data:
+        result = chardet.detect(data.read(1000000))
+        print(file1,':.... cines incaa')
+        print(result)
+        
+    file2 = path_tabla   # ,  path_final
+    with open(file2, 'rb') as data:
+        result = chardet.detect(data.read(1000000))
+        print(file2,':.... tabla final ')
+        print(result)
+        
+    file3 = path_final 
+    with open(file3, 'rb') as data:
+        result = chardet.detect(data.read(1000000))
+        print(file3,':....  datos conjuntos ')
+        print(result)
     
