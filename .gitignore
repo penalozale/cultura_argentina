@@ -1,0 +1,11 @@
+
+.env
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+.virtual_documents/
+
+#
+Cultura_dataset/
+info.log
+*.ipynb

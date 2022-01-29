@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-'''
-79 caracteres por línea por defecto y para la librería estandar.
-72 caracteres por línea de comentarios o documentación.
-Cuando se pretenda hacer un salto de línea se utiliza el carácter \, y se indentará correctamente.
-'''
 
 def proces_datos():    
     ### Cargamos las librerías

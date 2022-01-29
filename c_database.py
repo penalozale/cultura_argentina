@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-'''
-79 caracteres por línea por defecto y para la librería estandar.
-72 caracteres por línea de comentarios o documentación.
-Cuando se pretenda hacer un salto de línea se utiliza el carácter \, y se indentará correctamente.
-'''
 
 def database():
         
@@ -17,7 +10,7 @@ def database():
     import utils
     import logging
     
-    # Reutilizamos el archivo info.LOG (creado anteriormente)
+    
     logging.basicConfig(filename= 'info.log',
                         format='%(asctime)s : %(levelname)s : %(message)s',
                         datefmt='%d/%m/%y %H:%M:%S', level=logging.INFO, 
