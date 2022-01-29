@@ -9,7 +9,7 @@ def database():
     import sys
     import utils
     import logging
-    
+    from decouple import config
     
     logging.basicConfig(filename= 'info.log',
                         format='%(asctime)s : %(levelname)s : %(message)s',
@@ -99,15 +99,15 @@ def database():
     
     
     ### --- Conexión a la Base de Datos ---
-    database = 'postgres'  
-    user = 'postgres'      
-    password = 'abc123'    # se setea al instalar PostgreSQL. (algunas por default: postgres, 1234, )
-    host = 'localhost'     
-    port = '5432'
-        
-    default_url = f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}'
-    
-    engine = create_engine(default_url)
+    user = config('DB_USER')
+    password = config('DB_PASSWORD')
+    host = config('DB_HOST')
+    port = config('DB_PORT')
+    database = config('DB_NAME')
+  
+    database_url = f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}'
+
+    engine = create_engine(database_url)
     
     
     def centro_cult(tabla_name):
