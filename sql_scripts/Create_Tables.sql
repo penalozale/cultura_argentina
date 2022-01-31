@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS tab_fuentes (
 						fuente VARCHAR(100) NOT NULL,
 						cantidad INT NOT NULL,
 						fecha_carga DATE NOT NULL
-					 );               
+					 );
 
 
 

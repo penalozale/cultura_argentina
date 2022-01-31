@@ -73,19 +73,19 @@ def database():
     
     
     ### --- C) Tabla: Datos Conjuntos ---
-    # - Por definicion, esta tabla consiste en 3 sub-tablas, una abajo de la otra
-    # - Cada sub-tabla comienza con una linea comentada
-    
-    # 1ra sub-tabla: registros por categoria
-    reg_categ = pd.read_csv(path_conjunto_f, skiprows=1, nrows=3, names = ['categoria', 'cantidad'], encoding = 'utf-8')
-    
+    # - Por definición, esta tabla consiste en 3 sub-tablas, una abajo de la otra
+    # - Cada sub-tabla comienza con una línea comentada
+    print('acá estaría la prueba ')
+    # 1ra sub-tabla: registros por categoría
+    reg_categ = pd.read_csv(path_conjunto_f, skiprows=1, nrows=3, names = ['categoria', 'cantidad'], encoding = 'latin-1')
+
     # 2da sub-tabla: registros por provincia y categoria
-    reg_prov_cat = pd.read_csv(path_conjunto_f, skiprows=6, nrows=24*3, names=['provincia', 'categoria', 'cantidad'], encoding = 'utf-8') 
+    reg_prov_cat = pd.read_csv(path_conjunto_f, skiprows=6, nrows=24*3, names=['provincia', 'categoria', 'cantidad'], encoding = 'latin-1')
     #  Agregamos fecha de carga
     reg_prov_cat['fecha_carga'] = pd.to_datetime('today').strftime("%d-%m-%Y")
     
     # 3ra sub-tabla: registros por fuente (hay que normalizar los nombres)
-    reg_fuente = pd.read_csv(path_conjunto_f, skiprows=8+24*3, names=['fuente', 'cantidad'], encoding = 'utf-8')
+    reg_fuente = pd.read_csv(path_conjunto_f, skiprows=8+24*3, names=['fuente', 'cantidad'], encoding = 'latin-1')
     #  Agregamos fecha de carga
     reg_fuente['fecha_carga'] = pd.to_datetime('today').strftime("%d-%m-%Y")
     
@@ -142,7 +142,7 @@ def database():
         categoria_new.to_sql('tab_categorias', con = conn, if_exists='append', index=False)
         centros_culturales = centro_cult(tabla)
         centros_culturales.to_sql('tab_centro_culturales', con = engine, if_exists='append', index=False)
-        reg_fuente.to_sql('tab_fuentes', con = conn, if_exists='append', index=False)
+        #reg_fuente.to_sql('tab_fuentes', con = conn, if_exists='append', index=False)
         
     
     logging.info('La información ha sido guardada en la base de datos')
