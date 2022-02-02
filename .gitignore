@@ -3,6 +3,7 @@
 __pycache__/
 .venv/
 .virtual_documents/
+.vscode
 
 #
 Cultura_dataset/
