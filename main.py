@@ -4,7 +4,6 @@
 import a_descarga_datos as des
 import b_proces_datos as proc
 import c_database as db
-import logging
 
 if __name__ == "__main__":
     # Se descargan los datos de las fuentes

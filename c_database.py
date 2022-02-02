@@ -1,12 +1,8 @@
 
 def database():
-    import chardet
     import os
     import pandas as pd
     from sqlalchemy import create_engine
-    from sqlalchemy.sql import text
-    import psycopg2
-    import sys
     import utils
     import logging
     from decouple import config

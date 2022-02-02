@@ -1,8 +1,6 @@
 
 def proces_datos():    
     ### Cargamos las librerías
-    import glob
-    import chardet
     import pandas as pd
     import numpy as np
     import os
