@@ -75,7 +75,7 @@ def file_path(categoria):
     ''' Crea la estructura de carpetas donde se guardarán las tablas.
     Por ej: Cultura_dataset/museos/2021-diciembre/museos-10-12-2021.csv
     
-    INPUT: categoria_link: link de descarga de la tabla de datos
+    INPUT: categoria: link de descarga de la tabla de datos
     OUTPUT: file_path: el path completo donde se guardará el archivo
     '''
     # Carpeta principal

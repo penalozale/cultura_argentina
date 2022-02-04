@@ -70,21 +70,17 @@ def database():
     
     ### --- C) Tabla: Datos Conjuntos ---
     # - Por definición, esta tabla consiste en 3 sub-tablas, una abajo de la otra
-    # - Cada sub-tabla comienza con una línea comentada
-    print('acá estaría la prueba ')
+
     # 1ra sub-tabla: registros por categoría
     reg_categ = pd.read_csv(path_conjunto_f, skiprows=1, nrows=3, names = ['categoria', 'cantidad'], encoding = 'latin-1')
 
     # 2da sub-tabla: registros por provincia y categoria
     reg_prov_cat = pd.read_csv(path_conjunto_f, skiprows=6, nrows=24*3, names=['provincia', 'categoria', 'cantidad'], encoding = 'latin-1')
-    #  Agregamos fecha de carga
     reg_prov_cat['fecha_carga'] = pd.to_datetime('today').strftime("%d-%m-%Y")
     
     # 3ra sub-tabla: registros por fuente (hay que normalizar los nombres)
     reg_fuente = pd.read_csv(path_conjunto_f, skiprows=8+24*3, names=['fuente', 'cantidad'], encoding = 'latin-1')
-    #  Agregamos fecha de carga
     reg_fuente['fecha_carga'] = pd.to_datetime('today').strftime("%d-%m-%Y")
-    
     
     # Unimos las tablas 'categorias' con 'reg_categ'
     categoria_new = pd.merge(categorias, reg_categ, on = 'categoria')
@@ -101,7 +97,6 @@ def database():
     database_url = f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}'
 
     engine = create_engine(database_url)
-    
     
     def centro_cult(tabla_name):
         ''' 
