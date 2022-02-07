@@ -155,13 +155,13 @@ def proces_datos():
     path_final = os.path.normpath(os.path.join(cines, "..", "..", "..")) + '/datos_conjuntos.csv'
     with open(path_final, 'w') as f:
         f.write('# Registros totales por categoría:\n')
-        reg_por_categoria.to_csv(f, header = False, mode = 'a')#, encoding='utf8')
+        reg_por_categoria.to_csv(f, sep=',' ,header = False, mode = 'a', line_terminator='\n')#, encoding='utf8')
         f.write('\n')
         f.write('# Registros por provincia y por categoría:\n')
-        reg_prov_categ.to_csv(f, header = False, mode = 'a')#, encoding='utf8')
+        reg_prov_categ.to_csv(f, sep=',', header = False, mode = 'a', line_terminator='\n')#, encoding='utf8')
         f.write('\n')
         f.write('# Registros totales por fuente:\n')
-        reg_por_fuente.to_csv(f, header = False, mode = 'a')#, encoding='utf8')
+        reg_por_fuente.to_csv(f, sep=',', header = False, mode = 'a', line_terminator='\n')#, encoding='utf8')
         
         
     print(f'se guardaron 3 tablas en un mismo archivo, en  {path_final}')

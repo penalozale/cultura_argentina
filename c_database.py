@@ -133,7 +133,7 @@ def database():
         categoria_new.to_sql('tab_categorias', con = conn, if_exists='append', index=False)
         centros_culturales = centro_cult(tabla)
         centros_culturales.to_sql('tab_centro_culturales', con = engine, if_exists='append', index=False)
-        #reg_fuente.to_sql('tab_fuentes', con = conn, if_exists='append', index=False)
+        reg_fuente.to_sql('tab_fuentes', con = conn, if_exists='append', index=False)
         
     
     logging.info('La información ha sido guardada en la base de datos')
